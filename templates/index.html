@@ -1,91 +1,34 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html>
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Sistema de Gestión de Alumnos</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
+    <title>Alumnos</title>
 </head>
-
 <body>
+    <h1>Lista de Alumnos</h1>
 
-    <div class="container">
+    <a href="/agregar">Agregar Alumno</a>
 
-        <h1>
-            Sistema de Gestión de Alumnos
-        </h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Correo</th>
+            <th>Teléfono</th>
+            <th>Acciones</th>
+        </tr>
 
-        <div class="text-end mb-4">
-
-            <a href="/agregar" class="btn btn-primary">
-                Agregar Alumno
-            </a>
-
-        </div>
-
-        <div class="table-responsive">
-
-            <table class="table table-bordered table-hover align-middle">
-
-                <thead>
-
-                    <tr>
-
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Correo</th>
-                        <th>Teléfono</th>
-                        <th>Acciones</th>
-
-                    </tr>
-
-                </thead>
-
-                <tbody>
-
-                    {% for alumno in alumnos %}
-
-                    <tr>
-
-                        <td>{{ alumno[0] }}</td>
-                        <td>{{ alumno[1] }}</td>
-                        <td>{{ alumno[2] }}</td>
-                        <td>{{ alumno[3] }}</td>
-
-                        <td>
-
-                            <a href="/editar/{{ alumno[0] }}"
-                            class="btn btn-warning btn-sm">
-                                Editar
-                            </a>
-
-                            <a href="/eliminar/{{ alumno[0] }}"
-                            class="btn btn-danger btn-sm"
-                            onclick="return confirm('¿Seguro que deseas eliminar este alumno?')">
-                                Eliminar
-                            </a>
-
-                        </td>
-
-                    </tr>
-
-                    {% endfor %}
-
-                </tbody>
-
-            </table>
-
-        </div>
-
-    </div>
-
+        {% for alumno in alumnos %}
+        <tr>
+            <td>{{ alumno.id }}</td>
+            <td>{{ alumno.nombre }}</td>
+            <td>{{ alumno.correo }}</td>
+            <td>{{ alumno.telefono }}</td>
+            <td>
+                <a href="/editar/{{ alumno.id }}">Editar</a>
+                <a href="/eliminar/{{ alumno.id }}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
 </body>
 </html>

@@ -1,63 +1,18 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html>
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Editar Alumno</title>
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-
 </head>
-
 <body>
+    <h1>Editar Alumno</h1>
 
-    <div class="container">
+    <form method="POST">
+        <input type="text" name="nombre" value="{{ alumno.nombre }}" required><br>
+        <input type="email" name="correo" value="{{ alumno.correo }}" required><br>
+        <input type="text" name="telefono" value="{{ alumno.telefono }}" required><br>
+        <button type="submit">Actualizar</button>
+    </form>
 
-        <h2>
-            Editar Alumno
-        </h2>
-
-        <form method="POST">
-
-            <input type="text"
-            name="nombre"
-            value="{{ alumno[1] }}"
-            class="form-control mb-3"
-            required>
-
-            <input type="email"
-            name="correo"
-            value="{{ alumno[2] }}"
-            class="form-control mb-3"
-            required>
-
-            <input type="text"
-            name="telefono"
-            value="{{ alumno[3] }}"
-            class="form-control mb-3"
-            required>
-
-            <div class="text-center">
-
-                <button class="btn btn-primary">
-                    Actualizar Alumno
-                </button>
-
-                <a href="/" class="btn btn-secondary">
-                    Volver
-                </a>
-
-            </div>
-
-        </form>
-
-    </div>
-
+    <a href="/">Volver</a>
 </body>
 </html>
