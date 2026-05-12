@@ -5,31 +5,34 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Lista de Alumnos</h1>
 
-    <a href="/agregar">Agregar Alumno</a>
+<h1>Lista de Alumnos</h1>
 
-    <table border="1">
-        <tr>
-            <th>ID</th>
-            <th>Nombre</th>
-            <th>Correo</th>
-            <th>Teléfono</th>
-            <th>Acciones</th>
-        </tr>
+<a href="/agregar">Agregar Alumno</a>
 
-        {% for alumno in alumnos %}
-        <tr>
-            <td>{{ alumno.id }}</td>
-            <td>{{ alumno.nombre }}</td>
-            <td>{{ alumno.correo }}</td>
-            <td>{{ alumno.telefono }}</td>
-            <td>
-                <a href="/editar/{{ alumno.id }}">Editar</a>
-                <a href="/eliminar/{{ alumno.id }}">Eliminar</a>
-            </td>
-        </tr>
-        {% endfor %}
-    </table>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Correo</th>
+        <th>Teléfono</th>
+        <th>Acciones</th>
+    </tr>
+
+    {% for alumno in alumnos %}
+    <tr>
+        <td>{{ alumno.id }}</td>
+        <td>{{ alumno.nombre }}</td>
+        <td>{{ alumno.correo }}</td>
+        <td>{{ alumno.telefono }}</td>
+        <td>
+            <a href="/editar/{{ alumno.id }}">Editar</a>
+            <a href="/eliminar/{{ alumno.id }}">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+</table>
+
 </body>
 </html>

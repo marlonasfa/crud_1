@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Agregar Alumno</title>
+    <title>Agregar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Agregar Alumno</h1>
 
-    <form method="POST">
-        <input type="text" name="nombre" placeholder="Nombre" required><br>
-        <input type="email" name="correo" placeholder="Correo" required><br>
-        <input type="text" name="telefono" placeholder="Teléfono" required><br>
-        <button type="submit">Guardar</button>
-    </form>
+<h1>Agregar Alumno</h1>
 
-    <a href="/">Volver</a>
+<form method="POST">
+    <input type="text" name="nombre" placeholder="Nombre" required><br>
+    <input type="email" name="correo" placeholder="Correo" required><br>
+    <input type="text" name="telefono" placeholder="Teléfono" required><br>
+    <button type="submit">Guardar</button>
+</form>
+
+<br>
+<a href="/">Volver</a>
+
 </body>
 </html>

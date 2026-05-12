@@ -1,97 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f6f9;
+    margin: 20px;
 }
 
-body{
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #0f172a, #1e293b);
-    min-height: 100vh;
-    padding: 40px 15px;
+h1 {
+    color: #333;
 }
 
-/* CONTENEDOR */
-
-.container{
-    background: #ffffff;
-    padding: 40px;
-    border-radius: 20px;
-    box-shadow: 0px 10px 30px rgba(0,0,0,0.3);
+a {
+    text-decoration: none;
+    color: white;
+    background-color: #007bff;
+    padding: 6px 10px;
+    border-radius: 5px;
 }
 
-/* TITULOS */
+a:hover {
+    background-color: #0056b3;
+}
 
-h1,
-h2{
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
     text-align: center;
-    margin-bottom: 30px;
-    color: #0f172a;
-    font-weight: 700;
 }
 
-/* BOTONES */
-
-.btn{
-    border-radius: 10px;
-    padding: 10px 18px;
-    font-weight: 500;
-    transition: 0.3s;
-}
-
-.btn:hover{
-    transform: scale(1.05);
-}
-
-/* TABLA */
-
-.table{
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.table thead{
-    background: #0f172a;
+th {
+    background-color: #007bff;
     color: white;
 }
 
-.table tbody tr:hover{
-    background: #f1f5f9;
-    transition: 0.3s;
+form input {
+    padding: 8px;
+    margin: 5px;
+    width: 250px;
 }
 
-/* INPUTS */
-
-.form-control{
-    border-radius: 10px;
-    padding: 12px;
-    border: 2px solid #cbd5e1;
-}
-
-.form-control:focus{
-    border-color: #2563eb;
-    box-shadow: 0px 0px 10px rgba(37,99,235,0.3);
-}
-
-/* FORMULARIO */
-
-form{
-    max-width: 600px;
-    margin: auto;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:768px){
-
-    .container{
-        padding: 20px;
-    }
-
-    h1{
-        font-size: 28px;
-    }
-
+button {
+    padding: 8px 15px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
 }

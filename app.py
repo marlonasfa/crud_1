@@ -1,9 +1,9 @@
-from flask import Flask, redirect, render_template, request, abort
+from flask import Flask, render_template, request, redirect, abort
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 
-# CONFIGURACIÓN SQLITE
+# SQLITE
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///alumnos.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
@@ -20,7 +20,7 @@ class Alumno(db.Model):
 with app.app_context():
     db.create_all()
 
-# MOSTRAR
+# LISTAR
 @app.route('/')
 def index():
     alumnos = Alumno.query.all()

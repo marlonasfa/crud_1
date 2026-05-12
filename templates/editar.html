@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Editar Alumno</title>
+    <title>Editar</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-    <h1>Editar Alumno</h1>
 
-    <form method="POST">
-        <input type="text" name="nombre" value="{{ alumno.nombre }}" required><br>
-        <input type="email" name="correo" value="{{ alumno.correo }}" required><br>
-        <input type="text" name="telefono" value="{{ alumno.telefono }}" required><br>
-        <button type="submit">Actualizar</button>
-    </form>
+<h1>Editar Alumno</h1>
 
-    <a href="/">Volver</a>
+<form method="POST">
+    <input type="text" name="nombre" value="{{ alumno.nombre }}" required><br>
+    <input type="email" name="correo" value="{{ alumno.correo }}" required><br>
+    <input type="text" name="telefono" value="{{ alumno.telefono }}" required><br>
+    <button type="submit">Actualizar</button>
+</form>
+
+<br>
+<a href="/">Volver</a>
+
 </body>
 </html>
